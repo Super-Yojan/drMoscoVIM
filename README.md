@@ -1,4 +1,4 @@
-# LEETVim
+# drMoscoVIM
 A Neovim config that's totally not copied
 
 ![](./pictures/Homepage.png)
