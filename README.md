@@ -18,9 +18,14 @@ sudo apt install stow
 ```
 
 ```bash
-git clone https://github.com/Super-Yojan/LEETVim ~/.LEETVim
-cd ~/.LEETVim
+git clone https://github.com/Super-Yojan/drMoscoVIM ~/.drMoscoVIM
+cd ~/.drMoscoVIM
 stow nvim
+```
+
+#### Without stow
+```bash
+ln -s ~/.drMoscoVIM/nvim/.config/nvim ~/.config/nvim
 ```
 
 ## Screenshots
