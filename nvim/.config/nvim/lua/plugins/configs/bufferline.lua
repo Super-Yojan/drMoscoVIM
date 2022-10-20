@@ -4,7 +4,7 @@ if not _bufferline then
     return
 end
 
-local colors = require("theme").colors
+-- local colors = require("theme").colors
 
 bufferline.setup {
     options = {
@@ -43,70 +43,5 @@ bufferline.setup {
         enforce_regular_tabs = false,
         always_show_bufferline = true,
         sort_by = "insert_at_end",
-    },
-    highlights = {
-        fill = {
-            fg = colors.fg,
-            bg = colors.grey19,
-        },
-        background = {
-            fg = colors.fg,
-            bg = colors.grey12,
-        },
-        buffer_visible = {
-            fg = colors.fg,
-            bg = colors.grey12,
-        },
-        buffer_selected = {
-            bold=true,
-            fg = colors.fg,
-            bg = colors.bg,
-        },
-        separator = {
-            fg = colors.cyan,
-            bg = colors.bg,
-        },
-        separator_selected = {
-            fg = colors.cyan,
-            bg = colors.bg,
-        },
-        separator_visible = {
-            fg = colors.cyan,
-            bg = colors.bg,
-        },
-        close_button = {
-            fg = colors.fg,
-            bg = colors.grey12,
-        },
-        duplicate = {
-            fg = colors.grey9,
-            bg = colors.grey12,
-        },
-        duplicate_selected = {
-            fg = colors.grey9,
-            italic=true,
-            bg = colors.bg,
-        },
-        duplicate_visible = {
-            fg = colors.grey9,
-            italic = true,
-            bg = colors.grey12,
-        },
-        indicator_selected = {
-            fg = colors.cyan,
-            bg = colors.bg,
-        },
-        modified = {
-            fg = colors.grey11,
-            bg = colors.grey12,
-        },
-        modified_visible = {
-            fg = colors.grey11,
-            bg = colors.grey12,
-        },
-        modified_selected = {
-            fg = colors.grey10,
-            bg = colors.bg,
-        },
     },
 }
