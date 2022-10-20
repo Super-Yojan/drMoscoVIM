@@ -45,8 +45,9 @@ return packer.startup(function(use)
         require("onedark").setup{
             style="darker",
         }
+        require('onedark').load()
         end
-};
+    };
 
     use {
         "kyazdani42/nvim-web-devicons",

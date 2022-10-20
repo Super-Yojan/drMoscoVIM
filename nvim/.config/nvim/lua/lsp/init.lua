@@ -54,7 +54,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local _cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if _cmp_nvim_lsp then
-    capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+    capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 end
 
 local _lspconfig = pcall(require, "lspconfig")
@@ -76,6 +76,7 @@ local servers = {
     "jdtls",
     "texlab",
     "python_lsp_server",
+    "clangd",
 }
 
 if _lspconfig then

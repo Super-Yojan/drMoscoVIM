@@ -5,6 +5,16 @@ vim.g.mapleader = " "
 vim.cmd [[set fcs=eob:\ ]]
 vim.cmd [[filetype plugin indent on]]
 vim.cmd [[set termguicolors]]
+vim.cmd [[
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+]]
 
 local options = {
     fileencoding = "utf-8",
@@ -51,6 +61,5 @@ for key, value in pairs(options) do
     vim.opt[key] = value
 end
 
-utils.set_indent_sizes { go = 4, python = 4, rust = 4, cpp = 4, c = 4, make = 4, lua = 4 }
+utils.set_indent_sizes { go = 4, python = 4, rust = 4, cpp = 4, c = 2, make = 4, lua = 4 , java = 4}
 
-require('onedark').load()
