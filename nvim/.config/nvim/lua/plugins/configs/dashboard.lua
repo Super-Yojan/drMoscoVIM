@@ -1,10 +1,11 @@
   local home = os.getenv('HOME')
   local db = require('dashboard')
   -- linux
-  db.preview_command = 'ueberzug'
+  --db.preview_command = 'ueberzug'
   --
-  db.preview_file_path = home .. '/.config/nvim/static/avatar.jpg'
-  db.custom_footer = {"Welcome Back, drMoscovium what are we doing today?"}
+  --db.preview_file_path = home .. '/.config/nvim/static/avatar.jpg'
+  local username = os.getenv('USER')
+  db.custom_footer = {"Welcome Back," .. username .. " what are we doing today?"}
   db.preview_file_height = 15
   db.preview_file_width = 40
 db.header_pad  = 5
