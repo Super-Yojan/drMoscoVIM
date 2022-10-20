@@ -156,7 +156,7 @@ return packer.startup(function(use)
     use {
         "neovim/nvim-lspconfig",
         requires = {
-            "folke/lua-dev.nvim",
+            "folke/neodev.nvim",
             "jose-elias-alvarez/typescript.nvim",
         },
     }
@@ -226,6 +226,13 @@ return packer.startup(function(use)
         "aserowy/tmux.nvim",
         config = function()
             require "plugins.configs.tmux"
+        end,
+    }
+
+    use {
+        "andweeb/presence.nvim",
+        config = function()
+            require "plugins.configs.richpresence"
         end,
     }
 
