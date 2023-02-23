@@ -153,12 +153,7 @@ return packer.startup(function(use)
     }
 
     -- LSP
-    use {"folke/neodev.nvim",
-        setup = function()
-            require("neodev").setup()
-        end,
-    }
-    use {
+   use {
         "neovim/nvim-lspconfig",
         requires = {
             "folke/neodev.nvim",

@@ -61,14 +61,12 @@ local _lspconfig = pcall(require, "lspconfig")
 
 local servers = {
     "bashls",
-    "sumneko_lua",
     "cssls",
     "html",
     "emmet_ls",
     "jsonls",
     "yamlls",
     "dockerls",
-    "sumneko_lua",
     "tsserver",
     "gopls",
     "eslint",
