@@ -74,6 +74,7 @@ local servers = {
     "jdtls",
     "texlab",
     "python_lsp_server",
+    "rust_analyzer",
     "clangd",
 }
 

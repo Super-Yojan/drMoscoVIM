@@ -34,12 +34,8 @@ packer.init {
 return packer.startup(function(use)
     use { "wbthomason/packer.nvim" }
     use { "lewis6991/impatient.nvim" }
-    use {'glepnir/dashboard-nvim',
-        config = function()
-            require "plugins.configs.dashboard"
-        end
-    }
-    -- UI
+    use{"simrat39/rust-tools.nvim"}
+   -- UI
     use {"navarasu/onedark.nvim" ,
         config = function()
         require("onedark").setup{
@@ -78,6 +74,27 @@ return packer.startup(function(use)
         require "plugins.configs.lualine"
   end
 }
+
+
+    -- LSP
+   use {
+        "neovim/nvim-lspconfig",
+        requires = {
+            "folke/neodev.nvim",
+            "jose-elias-alvarez/typescript.nvim",
+        },
+    }
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
+    }
+    use {
+        "ray-x/lsp_signature.nvim",
+        setup = function()
+            require("utils").packer_lazy_load "lsp_signature.nvim"
+        end,
+    }
+
     use { "williamboman/mason.nvim" ,
 
         config = function()
@@ -90,9 +107,11 @@ return packer.startup(function(use)
         }
     }
 })
-        end
-    }
-    -- -- Treesitter
+    end }
+
+
+
+   -- -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
         requires = {
@@ -139,41 +158,10 @@ return packer.startup(function(use)
             require("utils").packer_lazy_load "nvim-autopairs"
         end,
     }
-    use {
-        "tpope/vim-surround",
-        setup = function()
-            require("utils").packer_lazy_load "vim-surround"
-        end,
-    }
-    use {
+   use {
         "norcalli/nvim-colorizer.lua",
         config = function()
             require "plugins.configs.colorizer"
-        end,
-    }
-
-    -- LSP
-   use {
-        "neovim/nvim-lspconfig",
-        requires = {
-            "folke/neodev.nvim",
-            "jose-elias-alvarez/typescript.nvim",
-        },
-    }
-    use {
-        "jose-elias-alvarez/null-ls.nvim",
-        requires = { "nvim-lua/plenary.nvim" },
-    }
-    use {
-        "ray-x/lsp_signature.nvim",
-        setup = function()
-            require("utils").packer_lazy_load "lsp_signature.nvim"
-        end,
-    }
-    use {
-        "j-hui/fidget.nvim",
-        config = function()
-            require "plugins.configs.fidget"
         end,
     }
 
@@ -249,6 +237,12 @@ return packer.startup(function(use)
             require("utils").packer_lazy_load "gitsigns.nvim"
         end,
     }
+    use { 'NeogitOrg/neogit', requires = {'nvim-lua/plenary.nvim'}, 
+        config = function()
+            require "plugins.configs.neogit"
+        end,
+
+    }
     -- Latex
 
     use {"xuhdev/vim-latex-live-preview",
@@ -257,15 +251,6 @@ return packer.startup(function(use)
         end,
     }
 
-    -- Markdown
-    use {
-        "iamcco/markdown-preview.nvim",
-        run = "cd app && npm install",
-        setup = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-        end,
-        ft = { "markdown" },
-    }
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
